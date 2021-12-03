@@ -99,7 +99,8 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     SmartDashboard.putString("teleop test", "good");    
-    drive.testDrive(0.2);
+    drive.doubleDrive();
+    //SmartDashboard.putValue("Pistons Down", drive.pistons.get());
     //SmartDashboard.putNumber("left front motor", drive.lFMotor.get());
   }
 
