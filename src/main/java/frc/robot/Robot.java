@@ -4,9 +4,7 @@
 
 package frc.robot;
 
-// import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -22,10 +20,7 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  // PowerDistributionPanel pdp = new PowerDistributionPanel();
   Drive drive = new Drive();
-
-  MecanumDrive driveMecanum;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -36,18 +31,6 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
-
-    // Talon rFMotor = new Talon(1);
-    // Talon rRMotor = new Talon(4);
-    // Talon rDrop1 = new Talon(2);
-    // Talon rDrop2 = new Talon(3);
-
-    // Talon lFMotor = new Talon(5);
-    // Talon lRMotor = new Talon(8);
-    // Talon lDrop1 = new Talon(6);
-    // Talon lDrop2 = new Talon(7);
-
-    // driveMecanum = new MecanumDrive(lFMotor, lRMotor, rFMotor, rRMotor);
   }
 
   /**
@@ -98,10 +81,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    SmartDashboard.putString("teleop test", "good");    
     drive.doubleDrive();
-    //SmartDashboard.putValue("Pistons Down", drive.pistons.get());
-    //SmartDashboard.putNumber("left front motor", drive.lFMotor.get());
   }
 
   /** This function is called once when the robot is disabled. */
